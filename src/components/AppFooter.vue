@@ -7,11 +7,11 @@ const year = new Date().getFullYear();
     app
     padless
     tag="footer"
-    class="bg-grey-lighten-4 text-center py-4"
+    class="bg-grey-lighten-4 text-center py-2"
   >
     <v-container>
       <v-row class="justify-center">
-        <v-col cols="12" class="d-flex justify-center mb-2">
+        <v-col cols="12" class="d-flex justify-center mb-1">
           <v-btn
             variant="text"
             icon
@@ -51,6 +51,18 @@ const year = new Date().getFullYear();
             <v-icon>mdi-file-account-outline</v-icon>
           </v-btn>
         </v-col>
+        <!-- GitHub repo badge -->
+        <a
+          href="https://github.com/Meekb/career-up-dashboard"
+          target="_blank"
+          aria-label="GitHub Repo"
+        >
+          <img
+            alt="GitHub repo"
+            src="https://img.shields.io/badge/view%20on-GitHub-181717?logo=github&style=for-the-badge"
+            style="height: 24px; margin-left: 8px"
+          />
+        </a>
 
         <v-col cols="12">
           <small class="text-grey-darken-1">
