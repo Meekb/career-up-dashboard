@@ -22,3 +22,9 @@ import SidebarNav from "@/components/SidebarNav.vue";
     </footer>
   </v-app>
 </template>
+
+<style scoped>
+.v-main {
+  margin: 20px 20px;
+}
+</style>

@@ -5,9 +5,10 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
 
 <template>
   <v-app class="d-flex flex-column min-h-screen">
-    <DefaultLayout />
+    <DefaultLayout>
     <v-main>
       <router-view />
     </v-main>
+    </DefaultLayout>
   </v-app>
 </template>
