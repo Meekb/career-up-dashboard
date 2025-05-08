@@ -1,30 +1,37 @@
 <script setup lang="ts">
 import AppFooter from "@/components/AppFooter.vue";
+import BottomNav from "@/components/BottomNav.vue";
 import SidebarNav from "@/components/SidebarNav.vue";
+import { useDisplay } from "vuetify";
+
+const { mdAndUp } = useDisplay();
 </script>
 
 <template>
-  <v-app>
-    <header>
-      <!-- Add something like a logo here -->
-    </header>
+  <!-- SidebarNav always exists; it just shows differently on screen sizes -->
+  <v-navigation-drawer app permanent v-if="mdAndUp">
+    <SidebarNav />
+  </v-navigation-drawer>
 
-    <v-navigation-drawer app permanent>
-      <SidebarNav />
-    </v-navigation-drawer>
+  <!-- App bar -->
+  <v-app-bar app>
+    <v-toolbar color="primary">
+      <v-toolbar-title>This is a Header</v-toolbar-title>
+    </v-toolbar>
+  </v-app-bar>
 
-    <v-main>
-      <router-view />
-    </v-main>
+  <!-- Main content area -->
+  <v-main class="px-xxl-1 pt-16">
+    <router-view />
+  </v-main>
 
-    <footer>
-      <AppFooter />
-    </footer>
-  </v-app>
+  <!-- Bottom nav on mobile only -->
+  <v-bottom-navigation v-if="!mdAndUp" app height="64">
+    <BottomNav />
+  </v-bottom-navigation>
+
+  <!-- Footer -->
+  <v-footer app tag="footer" class="bg-grey-lighten-4 text-center py-2">
+    <AppFooter />
+  </v-footer>
 </template>
-
-<style scoped>
-.v-main {
-  margin: 20px 20px;
-}
-</style>
