@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DashboardPage from "@/pages/DashboardPage.vue";
+import TimezonesPage from "@/pages/TimezonesPage.vue";
 
 const routes = [
   {
@@ -7,6 +8,11 @@ const routes = [
     name: "Dashboard",
     component: DashboardPage,
   },
+  {
+    path: "/timezones",
+    name: "Timezones",
+    component: TimezonesPage,
+  }
 ];
 
 const router = createRouter({

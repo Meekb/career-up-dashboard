@@ -32,7 +32,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <v-card height="450" elevation="4" rounded="lg" class="pa-4">
+  <v-card height="450" elevation="4" rounded="lg" class="pa-2">
     <v-toolbar color="blue">
       <v-toolbar-title>Country Selector</v-toolbar-title>
     </v-toolbar>

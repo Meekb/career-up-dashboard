@@ -1,6 +1,6 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-import { useSessionStorage } from "@vueuse/core";
+import {StorageSerializers, useSessionStorage} from "@vueuse/core";
 import { fetchCountries } from "@/api/dashboard.js";
 import type { Country } from "@/models/country.model";
 
@@ -11,7 +11,8 @@ export const useCountryStore = defineStore("country", () => {
   // ✅ Persist selectedCountry in sessionStorage
   const selectedCountry = useSessionStorage<Country | null>(
     "selected-country",
-    null
+    null,
+    { serializer: StorageSerializers.object }
   );
 
   const getSelectableCountries = computed(() => {
@@ -37,15 +38,16 @@ export const useCountryStore = defineStore("country", () => {
   }
 
   function setSelectedCountry(country: Country) {
+    selectedCountry.value = null;
     selectedCountry.value = country;
   }
 
   return {
     countries,
     selectedCountry,
-    getAllCountries,
     getSelectableCountries,
     getCountryLatLng,
+    getAllCountries,
     setSelectedCountry,
   };
 });
