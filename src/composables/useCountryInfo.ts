@@ -8,6 +8,10 @@ export function useCountryInfo() {
 
   const area = computed(() => selectedCountry.value?.area ?? null);
   const capital = computed(() => selectedCountry.value?.capital?.[0] ?? "");
+  const countryLatLng = computed(() => {
+    const [lat = 0, lng = 0] = selectedCountry.value?.latlng ?? [];
+    return { lat, lng };
+  });
   const countryName = computed(() => selectedCountry.value?.name?.common ?? "");
   const currencyName = computed(() => {
     if (!selectedCountry.value?.currencies) return "";
@@ -33,6 +37,7 @@ export function useCountryInfo() {
   return {
     area,
     capital,
+    countryLatLng,
     countryName,
     currencyName,
     currencySymbol,

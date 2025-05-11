@@ -22,12 +22,6 @@ export const useCountryStore = defineStore("country", () => {
       .sort((a, b) => a.name.common.localeCompare(b.name.common));
   });
 
-  const getCountryLatLng = computed(() => {
-    const [lat = 0, lng = 0] = selectedCountry.value?.latlng ?? [];
-    console.log("POSITION", { lat, lng })
-    return { lat, lng };
-  });
-
   async function getAllCountries() {
     const response = await fetchCountries();
     setCountries(response.data);
@@ -46,7 +40,6 @@ export const useCountryStore = defineStore("country", () => {
     countries,
     selectedCountry,
     getSelectableCountries,
-    getCountryLatLng,
     getAllCountries,
     setSelectedCountry,
   };

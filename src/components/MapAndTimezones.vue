@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { GoogleMap } from "vue3-google-map";
+import { useCountryInfo } from "@/composables/useCountryInfo.ts";
 import { useCountryStore } from "@/stores/useCountryStore.js";
 import { DateTime } from "luxon";
 import { useDisplay } from "vuetify";
@@ -11,11 +12,12 @@ const { mdAndUp } = useDisplay();
 const apiKey: string = import.meta.env.VITE_MAPS_API_KEY;
 
 const countryStore = useCountryStore();
-const { selectedCountry, getCountryLatLng } = storeToRefs(countryStore);
+const { selectedCountry } = storeToRefs(countryStore);
 
+const countryInfo = useCountryInfo();
 const mapRef = ref(null);
 
-const _lng = ref<number>(getCountryLatLng.value?.lng ?? 0);
+const _lng = ref<number>(countryInfo.countryLatLng.value?.lng ?? 0);
 
 const timezoneTimes = ref<{ zone: string; time: string }[]>([]);
 
@@ -28,13 +30,13 @@ const lng = computed({
 });
 
 const center = computed(() => ({
-  lat: getCountryLatLng.value.lat,
+  lat: countryInfo.countryLatLng.value?.lat,
   lng: lng.value,
 }));
 
 const zoomValue = computed(() => {
   const veryLargeCountry = ["Canada", "United States"];
-  if (veryLargeCountry.includes(selectedCountry.value.name.common)) {
+  if (veryLargeCountry.includes(countryInfo.countryName.value)) {
     if (mdAndUp.value) {
       return 4;
     }
