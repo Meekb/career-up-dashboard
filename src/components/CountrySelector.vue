@@ -40,6 +40,7 @@ onMounted(async () => {
       <v-select
         v-if="selectorCountries.length"
         v-model="selectedCountryName"
+        data-testid="country-select"
         label="Select a country"
         :items="selectorCountries"
         hint="Choose a country"
