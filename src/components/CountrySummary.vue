@@ -25,9 +25,9 @@ const formattedPopulation = computed<string>(() => {
 
 onMounted(() => {
   if (selectedCountry.value) {
-    console.log("Restored from session:", selectedCountry.value);
+    console.warn("Restored from session...");
   } else {
-    console.log("No session country stored.");
+    console.warn("No country stored in session.");
   }
 });
 </script>

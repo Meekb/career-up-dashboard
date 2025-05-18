@@ -31,7 +31,7 @@ const { mdAndUp } = useDisplay();
   </v-bottom-navigation>
 
   <!-- Footer -->
-  <v-footer app tag="footer" class="bg-grey-lighten-4 text-center py-2">
+  <v-footer app tag="footer" class="bg-grey-lighten-4 text-center py-0">
     <AppFooter />
   </v-footer>
 </template>

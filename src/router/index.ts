@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DashboardPage from "@/pages/DashboardPage.vue";
+import SkillsPage from "@/pages/SkillsPage.vue";
 import TimezonesPage from "@/pages/TimezonesPage.vue";
 
 const routes = [
@@ -12,6 +13,11 @@ const routes = [
     path: "/timezones",
     name: "Timezones",
     component: TimezonesPage,
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    component: SkillsPage,
   }
 ];
 
