@@ -3,18 +3,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vitest", "vue"]
   },
   "files": [],
+  "include": ["src/**/*.ts", "src/**/*.vue", "shims-vue.d.ts"],
   "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
-    }
-  ]
+      {
+        "path": "./tsconfig.node.json"
+      },
+      {
+        "path": "./tsconfig.app.json"
+      },
+      {
+        "path": "./tsconfig.vitest.json"
+      }
+    ]
 }
