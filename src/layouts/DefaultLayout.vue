@@ -15,8 +15,8 @@ const { mdAndUp } = useDisplay();
 
   <!-- App bar -->
   <v-app-bar app>
-    <v-toolbar color="primary">
-      <v-toolbar-title>This is a Header</v-toolbar-title>
+    <v-toolbar color="white">
+      <v-toolbar-title>Career-Up Dashboard</v-toolbar-title>
     </v-toolbar>
   </v-app-bar>
 

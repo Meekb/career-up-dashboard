@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ProgressCard from "@/components/ProgressCard.vue";
+
 const frontendSkills = [
   { name: "Vue 3", level: 6 },
   { name: "TypeScript", level: 3 },
@@ -24,45 +26,11 @@ const backendSkills = [
 
     <v-row>
       <v-col cols="12" md="6">
-        <v-card elevation="2" class="pa-4">
-          <h3>Frontend Skills</h3>
-          <v-col
-            v-for="skill in frontendSkills"
-            :key="skill.name"
-            cols="12"
-          >
-            <v-progress-linear
-              color="blue"
-              height="24"
-              :model-value="(skill.level / 6) * 100"
-              rounded
-              stream
-            >
-              <strong class="text-white ms-2 outlined-text">{{ skill.name }}</strong>
-            </v-progress-linear>
-          </v-col>
-        </v-card>
+        <ProgressCard :color="'#00acc1'" :skills="frontendSkills" />
       </v-col>
 
       <v-col cols="12" md="6">
-        <v-card elevation="2" class="pa-4">
-          <h3>Backend & DevOps</h3>
-          <v-col
-            v-for="skill in backendSkills"
-            :key="skill.name"
-            cols="12"
-          >
-            <v-progress-linear
-              color="purple"
-              height="24"
-              :model-value="(skill.level / 6) * 100"
-              rounded
-              stream
-            >
-              <strong class="text-white ms-2 outlined-text">{{ skill.name }}</strong>
-            </v-progress-linear>
-          </v-col>
-        </v-card>
+        <ProgressCard :color="'#8e24aa'" :skills="backendSkills" />
       </v-col>
     </v-row>
   </v-container>
@@ -71,14 +39,5 @@ const backendSkills = [
 <style scoped>
 h3 {
   margin-bottom: 16px;
-}
-/*outline for better visibility*/
-.outlined-text {
-  color: white;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px  1px 0 #000,
-    1px  1px 0 #000;
 }
 </style>
