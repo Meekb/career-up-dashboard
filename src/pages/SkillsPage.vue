@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const frontendSkills = [
-  { name: "Vue 3", level: 5 },
+  { name: "Vue 3", level: 6 },
   { name: "TypeScript", level: 3 },
   { name: "Nuxt 3", level: 5 },
   { name: "Pinia", level: 5 },
@@ -10,7 +10,7 @@ const frontendSkills = [
 const backendSkills = [
   { name: "Node.js", level: 4 },
   { name: "Express", level: 4 },
-  { name: "Directus", level: 5 },
+  { name: "Directus", level: 6 },
   { name: "PostgreSQL", level: 3 },
   { name: ".NET APIs", level: 2 },
 ];
@@ -38,7 +38,7 @@ const backendSkills = [
               rounded
               stream
             >
-              <strong class="text-white ms-2">{{ skill.name }}</strong>
+              <strong class="text-white ms-2 outlined-text">{{ skill.name }}</strong>
             </v-progress-linear>
           </v-col>
         </v-card>
@@ -59,7 +59,7 @@ const backendSkills = [
               rounded
               stream
             >
-              <strong class="text-white ms-2">{{ skill.name }}</strong>
+              <strong class="text-white ms-2 outlined-text">{{ skill.name }}</strong>
             </v-progress-linear>
           </v-col>
         </v-card>
@@ -71,5 +71,14 @@ const backendSkills = [
 <style scoped>
 h3 {
   margin-bottom: 16px;
+}
+/*outline for better visibility*/
+.outlined-text {
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
 }
 </style>

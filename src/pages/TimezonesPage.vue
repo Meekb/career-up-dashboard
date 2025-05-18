@@ -13,7 +13,6 @@ const showMap = computed(() => {
 </script>
 
 <template>
-  <h1 class="text-center my-4">Timezones</h1>
   <v-alert type="info" variant="tonal" class="mb-4">
     <strong>What do these timezones mean?</strong><br>
     UTC stands for <em>Coordinated Universal Time</em>. The number after it shows the difference in hours from UTC:
@@ -22,5 +21,6 @@ const showMap = computed(() => {
       <li><code>UTC-05:00</code> means 5 hours behind UTC (e.g., Eastern US)</li>
     </ul>
   </v-alert>
+  <h2 class="ma-4 font-weight-bold">Timezones</h2>
   <MapAndTimezones v-if="showMap" />
 </template>

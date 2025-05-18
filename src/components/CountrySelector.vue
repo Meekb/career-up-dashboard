@@ -28,6 +28,10 @@ watch(selectedCountryName, (newCountry) => {
 
 onMounted(async () => {
   await countryStore.getAllCountries();
+
+  if (countryStore.selectedCountry) {
+    selectedCountryName.value = countryStore.selectedCountry.name.common;
+  }
 });
 </script>
 
