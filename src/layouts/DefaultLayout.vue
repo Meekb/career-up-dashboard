@@ -9,19 +9,19 @@ const { mdAndUp } = useDisplay();
 
 <template>
   <!-- SidebarNav always exists; it just shows differently on screen sizes -->
-  <v-navigation-drawer app permanent v-if="mdAndUp">
+  <v-navigation-drawer app permanent v-if="mdAndUp" color="#DBDBDB">
     <SidebarNav />
   </v-navigation-drawer>
 
   <!-- App bar -->
   <v-app-bar app>
-    <v-toolbar color="white">
+    <v-toolbar color="#DBDBDB">
       <v-toolbar-title>Career-Up Dashboard</v-toolbar-title>
     </v-toolbar>
   </v-app-bar>
 
   <!-- Main content area -->
-  <v-main class="px-xxl-1 pt-16">
+  <v-main class="px-xxl-1 pt-16" style="background-color: #EFEFEF;">
     <router-view />
   </v-main>
 
@@ -31,7 +31,7 @@ const { mdAndUp } = useDisplay();
   </v-bottom-navigation>
 
   <!-- Footer -->
-  <v-footer app tag="footer" class="bg-grey-lighten-4 text-center py-0">
+  <v-footer app tag="footer" class="text-center py-0" style="background-color: #DBDBDB;">
     <AppFooter />
   </v-footer>
 </template>

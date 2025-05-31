@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import ProgressCard from "@/components/ProgressCard.vue";
+import AppBadge from "@/components/AppBadge.vue";
 
 const frontendSkills = [
   { name: "Vue 3", level: 6 },
@@ -16,6 +18,20 @@ const backendSkills = [
   { name: "PostgreSQL", level: 3 },
   { name: ".NET APIs", level: 2 },
 ];
+
+const completedBadges = computed(() => {
+  return frontendSkills.reduce((acc, cur) => {
+    if (cur.level === 6) {
+      const badge = {
+        text: cur.name,
+        color: "green",
+        variant: "elevated",
+      }
+      acc.push(badge);
+    }
+    return acc
+  }, [])
+});
 </script>
 
 <template>
@@ -26,11 +42,25 @@ const backendSkills = [
 
     <v-row>
       <v-col cols="12" md="6">
-        <ProgressCard :color="'#00acc1'" :skills="frontendSkills" />
+        <ProgressCard :color="'#4F959D'" :skills="frontendSkills" />
       </v-col>
 
       <v-col cols="12" md="6">
-        <ProgressCard :color="'#8e24aa'" :skills="backendSkills" />
+        <ProgressCard :color="'#205781'" :skills="backendSkills" />
+      </v-col>
+    </v-row>
+  </v-container>
+  <v-container fluid>
+    <v-row class="justify-center items-center">
+      <v-col cols="12" md="4">
+        <AppBadge
+          v-for="skill in completedBadges"
+          :key="skill.name"
+          :text="skill.text"
+          color="green"
+          variant="elevated"
+          class="mr-4"
+        />
       </v-col>
     </v-row>
   </v-container>
