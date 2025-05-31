@@ -1,7 +1,7 @@
 # Career Up Dashboard
 
 ## Overview:
-This is a very basic responsive dashboard app featuring modular frontend architecture and clean, reusable components — built with Vue 3, Vuetify 3, and TypeScript.
+This is a very basic responsive dashboard app featuring modular frontend architecture and clean, reusable components — built with Vue 3 with Pinia for state management, Vuetify 3, and TypeScript.
 
 ## Project Setup
 1. Clone this repo:
